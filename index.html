@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="张玉华 (Yuhua Zhang)">
+    <meta name="author" content="Yuhua Zhang">
+    
+    <title>Yuhua Zhang | 张玉华</title>
+    
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="profile-section">
+          <div class="profile-info">
+            <h1 class="name">Yuhua Zhang | 张玉华</h1>
+            <p class="introduction">
+            </p>
+            <p class="research-interests">
+              Research Interests: Robotics and Dexterous Manipulation
+            </p>
+            <div class="contact-links">
+              <a href="mailto:zszh859491360@gmail.com" class="contact-link">Email</a>
+              <span class="separator">/</span>
+              <a href="https://github.com/wordhood/" target="_blank" rel="noopener" class="contact-link">GitHub</a>
+            </div>
+          </div>
+          <div class="profile-photo">
+            <img src="images/YuhuaZhang.jpg" alt="张玉华 profile photo" class="avatar">
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="projects-section">
+          <h2 class="section-title">Projects</h2>
+          
+          <article class="project-card">
+            <div class="project-media">
+              <div class="media-container">
+                <video class="preview-video" muted autoplay loop playsinline>
+                  <source src="images/pybullet_demo.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <img src="images/pybullet_demo.jpg" alt="Dexterous hand grasping demo" class="preview-image">
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Dexterous Hand Grasping and Pick-and-Place</h3>
+              <p class="project-author">Yuhua Zhang</p>
+              <div class="project-links">
+                <a href="images/pybullet_demo.mp4" class="project-link">Demo</a>
+              </div>
+              <p class="project-description">
+                Built PyBullet-based dexterous manipulation simulations for both desktop clearing and 
+                pick-and-place tasks. For grasping, KUKA Allegro and Franka Panda robots perform IK-based 
+                control to clear randomly spawned YCB objects off a table. For pick-and-place, a KUKA IIWA7 
+                manipulator with an Allegro dexterous hand picks objects and places them into a custom 
+                multi-body basket using Slerp interpolation for smooth motion. Includes real-time joint 
+                debugging via GUI sliders.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section class="projects-section education-section">
+          <h2 class="section-title">Education</h2>
+          
+          <article class="project-card">
+            <div class="project-media">
+              <div class="media-container">
+                <img src="assets/西北民族大学.webp" alt="Northwest Minzu University" class="preview-image">
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Northwest Minzu University</h3>
+              <p class="project-description">
+                Bachelor of Biotechnology<br>
+                Sep. 2019 - Jun. 2023
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section class="projects-section work-experience-section">
+          <h2 class="section-title">Work Experience</h2>
+          
+          <article class="project-card">
+            <div class="project-media">
+              <div class="media-container">
+                <img src="assets/清华未来实验室.webp" alt="The Future Laboratory, Tsinghua University" class="preview-image">
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">The Future Laboratory, Tsinghua University</h3>
+              <p class="project-description">
+                Intern<br>
+                May. 2025 - Aug. 2025
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-media">
+              <div class="media-container">
+                <img src="assets/加速进化.webp" alt="Booster Robotics" class="preview-image">
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Booster Robotics</h3>
+              <p class="project-description">
+                Aug. 2025 - Present
+              </p>
+            </div>
+          </article>
+        </section>
+      </main>
+
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const mediaContainers = document.querySelectorAll('.media-container');
+        
+        mediaContainers.forEach(container => {
+          const video = container.querySelector('video');
+          const image = container.querySelector('img');
+          
+          if (video && image) {
+            container.addEventListener('mouseenter', () => {
+              video.style.opacity = '1';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+              video.style.opacity = '0';
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
