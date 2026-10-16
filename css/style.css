@@ -43,7 +43,7 @@ body {
 
 .profile-info {
   flex: 1;
-  min-width: 300px;
+  min-width: 0;
 }
 
 .name {
@@ -87,6 +87,7 @@ body {
 
 .avatar {
   width: 280px;
+  max-width: 100%;
   height: auto;
   border-radius: 0;
   object-fit: cover;
@@ -157,7 +158,38 @@ body {
   height: 100%;
   object-fit: cover;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s ease;
+}
+
+.preview-video.is-playing {
+  opacity: 1;
+}
+
+.preview-toggle {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  z-index: 1;
+  max-width: calc(100% - 16px);
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.preview-toggle:hover {
+  background: #000;
+}
+
+.preview-toggle:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
 }
 
 .preview-image {
@@ -169,11 +201,18 @@ body {
 
 .education-section .media-container,
 .work-experience-section .media-container {
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  margin-inline: auto;
   border-radius: 50%;
 }
 
 .education-section .preview-image,
 .work-experience-section .preview-image {
+  position: absolute;
+  inset: 0;
   object-fit: contain;
 }
 
@@ -187,6 +226,7 @@ body {
   font-weight: 700;
   margin-bottom: 8px;
   color: var(--text-color);
+  overflow-wrap: anywhere;
 }
 
 .project-author {
@@ -216,6 +256,7 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: var(--text-color);
+  overflow-wrap: anywhere;
 }
 
 .footer {
@@ -274,7 +315,19 @@ body {
   }
 
   .media-container {
-    height: 200px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .preview-video {
+    transition: none;
+  }
+
+  .project-card:hover {
+    transform: none;
   }
 }
 
@@ -294,7 +347,8 @@ body {
     height: 150px;
   }
 
-  .preview-video {
+  .preview-video,
+  .preview-toggle {
     display: none;
   }
 }
